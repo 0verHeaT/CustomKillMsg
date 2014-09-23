@@ -2,7 +2,7 @@ Custom kill messages
 ====================
 Better kill messages with picture of the gun and the distance in the upper left corner.
 
-Format: [killer] ['image'] [victime] ['distance'm] 
+Format: [killer] ['image'] [victim] ['distance'm] 
 
 Install instructions
 ====================
