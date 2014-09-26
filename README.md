@@ -6,7 +6,7 @@ Format: [killer] ['image'] [victim] ['distance'm]
 
 Install instructions
 ====================
-1. Copy and replace the server_playerDied.sqf in 'day_server/compile'.
+1. Copy and replace the server_playerDied.sqf and the fnc_plyrHit.sqf in 'day_server/compile'.
 2. Copy the kill_msg.sqf to your mission.pbo in your mod folder.
 3. In your init.sqf search for:
 ```
