@@ -48,8 +48,8 @@ EpochDeathBoardClick = {
 	_record_stxt = _record_stxt + format["<t size='1' align='left'>Was killed by %1</t><br/><br/>",_attacker];
 	_record_stxt = _record_stxt + format["<t size='1' align='left'>With a %1<br/>,_name];
 	if (_image != "nil") then {
-    _record_stxt = _record_stxt + format[<img size='3' image='%1' /></t>",_image];
-  };
+		 _record_stxt = _record_stxt + format[<img size='3' image='%1' /></t>",_image];
+  	};
 	_record_stxt = _record_stxt + "<br/><br/>";
 	_record_stxt = _record_stxt + format["<t size='1' align='left'>At a distance of %1m</t><br/><br/>",_distance];
 	_record_stxt = _record_stxt + format["<t font='Bitstream'>%1</t>",(_quotes call BIS_fnc_selectRandom)];
