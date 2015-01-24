@@ -8,8 +8,6 @@ if ((owner _victim) == (owner _attacker)) exitWith {
 	_victim setVariable["AttackedBy", _victim, true];
 };
 
-_weapon = (weaponState _attacker);
-
 _vehicle = typeOf (vehicle _attacker); 
 
 if ((getText (configFile >> "CfgVehicles" >> _vehicle >> "vehicleClass")) in ["CarW","Car","CarD","Armored","Ship","Support","Air","ArmouredW","ArmouredD","SupportWoodland_ACR"]) then {
