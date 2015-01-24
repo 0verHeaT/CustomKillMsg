@@ -22,8 +22,10 @@ if ((typeName _killer) != "STRING") then {
 	_pic = _victim getVariable["AttackedByWeaponImg", "nil"];
 	if ((owner _victim) == (owner _killer)) then {
 		_loc_message = format["PLAYERSUICIDE: %1 killed himself", _victimName];
+		_message = format ["%1 killed himself",_victimName];
 	} else {
 		_loc_message = format["PLAYERKILL: %1 was killed by %2 with weapon %3 from %4m", _victimName, _killerName, _weapon, _distance];
+		_message = format ["%1 was killed by %2 with weapon %3 from %4m", _victimName, _killerName, _weapon, _distance];
 	
 		if ((gettext (configFile >> 'cfgWeapons' >> (currentWeapon _killer) >> 'displayName')) != "Throw") then {
 			if (_pic != "nil") then {
@@ -39,7 +41,23 @@ if ((typeName _killer) != "STRING") then {
 	};
 
 	diag_log _loc_message;
-
+	
+	if(DZE_DeathMsgGlobal) then {
+		[nil, nil, rspawn, [_killer, _message], { (_this select 0) globalChat (_this select 1) }] call RE;
+	};
+	/* needs customRemoteMessage
+	if(DZE_DeathMsgGlobal) then {
+		customRemoteMessage = ['globalChat', _message, _killer];
+		publicVariable "customRemoteMessage";
+	};
+	*/
+	if(DZE_DeathMsgSide) then {
+		[nil, nil, rspawn, [_killer, _message], { (_this select 0) sideChat (_this select 1) }] call RE;
+	};
+	if(DZE_DeathMsgTitleText) then {
+		[nil,nil,"per",rTITLETEXT,_message,"PLAIN DOWN"] call RE;
+	};
+	
 	//Use my killboard in order to work correctly
 	_death_record = [
 		_victimName,
