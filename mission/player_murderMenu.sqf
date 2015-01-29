@@ -46,9 +46,9 @@ EpochDeathBoardClick = {
 	_record_stxt = format["<t size='1.6' align='left'>%1</t><br/><br/>",_victim];
 	_record_stxt = _record_stxt + format["<t size='1' align='left'>Died at %1:%2</t><br/><br/>",(_h call _format),(_m call _format)];
 	_record_stxt = _record_stxt + format["<t size='1' align='left'>Was killed by %1</t><br/><br/>",_attacker];
-	_record_stxt = _record_stxt + format["<t size='1' align='left'>With a %1<br/>,_name];
+	_record_stxt = _record_stxt + format["<t size='1' align='left'>With a %1</t><br/>,_name];
 	if (_image != "nil") then {
-		 _record_stxt = _record_stxt + format["<img size='3' image='%1' /></t>",_image];
+		 _record_stxt = _record_stxt + format["<img size='3' image='%1' />",_image];
   	};
 	_record_stxt = _record_stxt + "<br/><br/>";
 	_record_stxt = _record_stxt + format["<t size='1' align='left'>At a distance of %1m</t><br/><br/>",_distance];
